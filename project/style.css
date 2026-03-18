@@ -1,0 +1,36 @@
+body{
+    font-family: Arial, sans-serif;
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+input{
+    padding: 8px;
+    width: 70%;
+}
+
+button{
+    padding: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#loading{
+    color: blue;
+    font-weight: bold;
+}
+
+#weatherResult{
+    margin-top: 15px;
+}
