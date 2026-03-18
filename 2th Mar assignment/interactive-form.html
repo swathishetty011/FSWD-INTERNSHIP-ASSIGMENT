@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Signup Form</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#667eea,#764ba2);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    width:350px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+h2{
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#667eea;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5a67d8;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+}
+
+.success{
+    color:green;
+    text-align:center;
+    margin-top:10px;
+}
+
+#strength{
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Signup Form</h2>
+
+<form id="form">
+
+<input type="text" id="name" placeholder="Enter your name">
+<div id="nameError" class="error"></div>
+
+<input type="email" id="email" placeholder="Enter your email">
+<div id="emailError" class="error"></div>
+
+<input type="password" id="password" placeholder="Enter password">
+<div id="strength"></div>
+<div id="passwordError" class="error"></div>
+
+<button type="submit">Register</button>
+
+</form>
+
+<p id="successMsg" class="success"></p>
+
+</div>
+
+<script>
+
+let password = document.getElementById("password");
+
+password.addEventListener("keyup", function(){
+
+let value = password.value;
+let strength = document.getElementById("strength");
+
+if(value.length < 4){
+    strength.innerText = "Weak password";
+    strength.style.color = "red";
+}
+else if(value.length < 8){
+    strength.innerText = "Medium password";
+    strength.style.color = "orange";
+}
+else{
+    strength.innerText = "Strong password";
+    strength.style.color = "green";
+}
+
+});
+
+
+document.getElementById("form").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let pass = document.getElementById("password").value;
+
+let valid = true;
+
+document.getElementById("nameError").innerText="";
+document.getElementById("emailError").innerText="";
+document.getElementById("passwordError").innerText="";
+document.getElementById("successMsg").innerText="";
+
+if(name === ""){
+    document.getElementById("nameError").innerText="Name required";
+    valid=false;
+}
+
+if(!email.includes("@")){
+    document.getElementById("emailError").innerText="Enter valid email";
+    valid=false;
+}
+
+if(pass.length < 6){
+    document.getElementById("passwordError").innerText="Password must be 6+ characters";
+    valid=false;
+}
+
+if(valid){
+    document.getElementById("successMsg").innerText="Registration Successful!";
+}
+
+});
+
+</script>
+
+</body>
+</html>

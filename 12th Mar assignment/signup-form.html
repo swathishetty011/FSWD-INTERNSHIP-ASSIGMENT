@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Signup Form</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:350px;
+box-shadow:0 0 10px gray;
+}
+
+h2{
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#3498db;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2980b9;
+}
+
+.error{
+color:red;
+font-size:13px;
+}
+
+.success{
+color:green;
+text-align:center;
+margin-top:10px;
+}
+
+#strength{
+font-size:13px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Signup Form</h2>
+
+<form id="form">
+
+<input type="text" id="name" placeholder="Enter Name">
+<div id="nameError" class="error"></div>
+
+<input type="email" id="email" placeholder="Enter Email">
+<div id="emailError" class="error"></div>
+
+<input type="password" id="password" placeholder="Enter Password">
+<div id="strength"></div>
+<div id="passwordError" class="error"></div>
+
+<button type="submit">Register</button>
+
+</form>
+
+<p id="success" class="success"></p>
+
+</div>
+
+<script>
+
+let password = document.getElementById("password");
+
+password.addEventListener("keyup", function(){
+
+let value = password.value;
+let strength = document.getElementById("strength");
+
+if(value.length < 4){
+strength.innerText = "Weak password";
+strength.style.color = "red";
+}
+else if(value.length < 8){
+strength.innerText = "Medium password";
+strength.style.color = "orange";
+}
+else{
+strength.innerText = "Strong password";
+strength.style.color = "green";
+}
+
+});
+
+document.getElementById("form").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let pass = document.getElementById("password").value;
+
+let valid = true;
+
+document.getElementById("nameError").innerText="";
+document.getElementById("emailError").innerText="";
+document.getElementById("passwordError").innerText="";
+document.getElementById("success").innerText="";
+
+if(name === ""){
+document.getElementById("nameError").innerText="Name required";
+valid=false;
+}
+
+if(!email.includes("@")){
+document.getElementById("emailError").innerText="Enter valid email";
+valid=false;
+}
+
+if(pass.length < 6){
+document.getElementById("passwordError").innerText="Password must be at least 6 characters";
+valid=false;
+}
+
+if(valid){
+document.getElementById("success").innerText="Signup Successful!";
+}
+
+});
+
+</script>
+
+</body>
+</html>

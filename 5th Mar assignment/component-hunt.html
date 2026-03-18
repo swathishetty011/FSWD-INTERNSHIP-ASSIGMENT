@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Component Hunt</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+}
+
+/* Header */
+
+.header{
+    background:#ff0000;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+
+/* Layout */
+
+.container{
+    display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:200px;
+    background:#f4f4f4;
+    padding:20px;
+    height:500px;
+}
+
+/* Content */
+
+.content{
+    flex:1;
+    padding:20px;
+}
+
+/* Video Cards */
+
+.video-grid{
+    display:flex;
+    gap:20px;
+}
+
+.card{
+    border:1px solid #ccc;
+    padding:10px;
+    width:150px;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h2>Website Header (Navbar Component)</h2>
+</div>
+
+<div class="container">
+
+<div class="sidebar">
+<h3>Sidebar Component</h3>
+<ul>
+<li>Home</li>
+<li>Shorts</li>
+<li>Subscriptions</li>
+<li>Library</li>
+</ul>
+</div>
+
+<div class="content">
+
+<h3>Main Content Component</h3>
+
+<div class="video-grid">
+
+<div class="card">
+<img src="https://via.placeholder.com/150">
+<p>Video Title</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/150">
+<p>Video Title</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/150">
+<p>Video Title</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
