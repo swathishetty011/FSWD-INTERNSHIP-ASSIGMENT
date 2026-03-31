@@ -1,10 +1,5 @@
 {
-  "dependencies": {
-    "express": "^5.2.1",
-    "expresss": "^0.0.0",
-    "react-router-dom": "^7.13.1"
-  },
-  "name": "fswd-internship-assignment",
+  "name": "route-master",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -13,14 +8,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/swathishetty011/FSWD-INTERNSHIP-ASSIGMENT.git"
-  },
-  "bugs": {
-    "url": "https://github.com/swathishetty011/FSWD-INTERNSHIP-ASSIGMENT/issues"
-  },
-  "homepage": "https://github.com/swathishetty011/FSWD-INTERNSHIP-ASSIGMENT#readme",
-  "devDependencies": {},
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
