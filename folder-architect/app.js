@@ -1,4 +1,4 @@
-// Import File System module
+
 const fs = require('fs');
 const path = require('path');
 

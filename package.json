@@ -8,8 +8,21 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
   "description": "",
   "dependencies": {
     "express": "^5.2.1"
   }
+=======
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swathishetty011/FSWD-INTERNSHIP-ASSIGMENT.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swathishetty011/FSWD-INTERNSHIP-ASSIGMENT/issues"
+  },
+  "homepage": "https://github.com/swathishetty011/FSWD-INTERNSHIP-ASSIGMENT#readme",
+  "description": ""
+>>>>>>> 065ed26 (added new assignment)
 }
